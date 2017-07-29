@@ -232,7 +232,7 @@ EOF
 function install_ss(){
     # Install libsodium
     tar zxf libsodium-1.0.10.tar.gz
-    cd $cur_dir/libsodium-1.0.10
+    cd $cur_dir/libsodium-1.0.12
     ./configure && make && make install
     echo "/usr/local/lib" > /etc/ld.so.conf.d/local.conf
     ldconfig
