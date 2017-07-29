@@ -134,7 +134,7 @@ function pre_install(){
 # Download files
 function download_files(){
     # Download libsodium file
-    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz; then
+    if ! wget --no-check-certificate -O libsodium-1.0.10.tar.gz https://github.com/geoleonsh/sasa_install/blob/master/libsodium-1.0.12.tar.gz; then
         echo "Failed to download libsodium file!"
         exit 1
     fi
@@ -145,12 +145,12 @@ function download_files(){
     # fi
     # Download ShadowsocksR chkconfig file
     if [ "$OS" == 'CentOS' ]; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/shadowsocksR -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://github.com/geoleonsh/sasa_install/blob/master/shadowsocksR -O /etc/init.d/shadowsocks; then
             echo "Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
     else
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/shadowsocksR-debian -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://github.com/geoleonsh/sasa_install/blob/master/shadowsocksR-debian -O /etc/init.d/shadowsocks; then
             echo "Failed to download ShadowsocksR chkconfig file!"
             exit 1
         fi
@@ -240,7 +240,7 @@ function install_ss(){
     cd $cur_dir
     # unzip -q manyuser.zip
     # mv shadowsocks-manyuser/shadowsocks /usr/local/
-	git clone https://github.com/91yun/shadowsocksr-1.git /usr/local/shadowsocks
+	git clone https://github.com/geoleonsh/sasar2.git /usr/local/shadowsocks
     if [ -f /usr/local/shadowsocks/server.py ]; then
         chmod +x /etc/init.d/shadowsocks
         # Add run on system start up
